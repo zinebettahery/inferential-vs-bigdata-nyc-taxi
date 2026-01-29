@@ -1,90 +1,83 @@
-# 📊 Analyse comparative : Statistiques inférentielles vs Big Data  
-## NYC Yellow Taxi Trip Records (2022–2024)
+# 📊 Inferential Statistics vs Big Data Analytics  
+### NYC Yellow Taxi Trip Records (2022–2024)
 
 ## 🧠 Contexte du projet
-Ce projet vise à comparer deux approches d’analyse de données appliquées à un jeu de données massif de mobilité urbaine :
+Dans un contexte de **données massives de mobilité urbaine**, ce projet vise à comparer deux approches analytiques couramment utilisées en Data Analytics :
 
 - **Statistiques inférentielles** basées sur un **échantillon (1 %)**
-- **Analyse Big Data** basée sur la **population complète (100 %)**
+- **Analyse Big Data** exploitant la **population complète (100 %)**
 
-Les données analysées proviennent des **NYC Yellow Taxi Trip Records** pour la période 2022–2024 et sont traitées avec **Apache Spark sur Databricks**.
+L’objectif est d’évaluer la **fiabilité**, les **limites** et les **impacts métier** de chaque approche à partir des données réelles des **NYC Yellow Taxi Trip Records**.
+
+---
+
+## 👤 User Story
+> En tant que **Data Analyst** travaillant sur des données de mobilité à grande échelle, je dois choisir entre une approche par échantillonnage ou une approche Big Data afin de produire des analyses fiables, adaptées aux contraintes techniques et aux besoins métier.
 
 ---
 
 ## 🎯 Objectifs
-- Estimer des indicateurs clés à partir d’un échantillon
-- Calculer les valeurs exactes sur la population complète
-- Comparer les résultats et évaluer la représentativité de l’échantillon
-- Identifier les avantages, limites et cas d’usage de chaque approche
+- Comparer des **indicateurs clés** calculés sur un échantillon vs la population complète
+- Évaluer la **représentativité** de l’échantillon
+- Mesurer l’**impact des outliers**
+- Identifier les **avantages et limites** de chaque approche
+- Produire une **restitution claire et pédagogique** (notebook + slides)
+
 
 ---
 
-## ⚙️ Questions analytiques
-- Prix moyen d’une course (fare_amount)
-- Distance moyenne d’une course (trip_distance)
+## ❓ Questions analytiques traitées
+- Prix moyen des courses (`fare_amount`)
+- Distance moyenne (`trip_distance`)
 - Durée moyenne des courses
-- Proportion des courses avec tip > 0
+- Proportion des courses avec `tip > 0`
 - Distribution temporelle (heure / jour / semaine)
-- Comparaison géographique des zones de pickup
-- Analyse des outliers (courses longues ou chères)
-- Ratio moyen tip / fare par type de paiement (cash vs card)
+- Comparaison des tarifs par zones géographiques
+- Analyse des **outliers** (courses très longues ou très chères)
+- Ratio `tip / fare` selon le type de paiement
 
 ---
 
+## 📐 Méthodologie
+1. **EDA** : compréhension des données et nettoyage
+2. **Statistiques inférentielles** sur un échantillon (1 %)
+3. **Analyse Big Data** sur la population complète
+4. **Comparaison** des résultats (proportions, moyennes, distributions)
+5. **Analyse critique** des écarts et des biais
+6. **Restitution visuelle** et storytelling
+
+⚠️ Les comparaisons sont faites sur des **proportions et des indicateurs**, et non sur des counts absolus, afin de garantir une comparaison statistiquement valide.
+
 
 ---
 
-## 🧪 Données utilisées
-### 🔹 Échantillon (Statistiques inférentielles)
-- 1 % des données
-- Nettoyage et analyse avec **pandas**
-- Calcul d’intervalles de confiance et estimations
-
-### 🔹 Population complète (Big Data)
-- Données 2022–2024 (plus de 100 millions de lignes)
-- Traitement avec **PySpark**
-- Calcul des valeurs exactes
-
----
-
-## 🛠️ Outils & Technologies
+## 🛠️ Outils & technologies
 - **Databricks Community Edition**
 - **Apache Spark (PySpark)**
-- Python (pandas, numpy, matplotlib)
-- GitHub
+- Python (pandas, matplotlib / seaborn / plotly)
 - Canva (slides)
+- Git & GitHub
 
 ---
 
-## 📈 Méthodologie
-1. Compréhension des données (EDA)
-2. Nettoyage des données
-3. Analyse statistique sur échantillon
-4. Analyse Big Data sur population
-5. Comparaison des résultats
-6. Interprétation métier et critique
-7. Restitution via slides
+## 📊 Résultats clés
+- L’échantillon fournit des estimations proches des valeurs réelles pour certains indicateurs globaux
+- Des écarts apparaissent sur les distributions fines (zones, heures creuses, outliers)
+- L’analyse Big Data garantit des résultats exacts mais avec un coût computationnel plus élevé
+- Le choix de la méthode dépend du **contexte métier**, du **volume de données** et des **contraintes techniques**
 
 ---
 
 ## 👥 Travail en binôme
-- **Échantillon (statistiques inférentielles)** : *ET-TAHERY ZINEB*
-- **Population complète (Big Data)** : *ENNACIRI MAWADA*
-
----
-
-## ✅ Résultats clés
-- L’échantillon fournit des estimations très proches des valeurs réelles
-- Les outliers ont un impact limité sur les moyennes globales
-- Le Big Data permet une précision maximale mais avec un coût technique plus élevé
+Projet réalisé dans un cadre pédagogique, en respectant les bonnes pratiques de Data Analysis et de Big Data Analytics.
 
 ---
 
 ## 📌 Conclusion
 Ce projet met en évidence que :
-- Les statistiques inférentielles sont efficaces lorsque les ressources sont limitées
-- Le Big Data est pertinent lorsque la précision absolue est requise
-- Le choix dépend du contexte métier, du volume de données et des contraintes techniques
+- Les **statistiques inférentielles** sont rapides et efficaces pour des analyses exploratoires
+- Les **technologies Big Data** sont indispensables lorsque la précision et l’exhaustivité sont critiques
+- Une approche hybride est souvent la plus pertinente en contexte réel
 
 
 
